@@ -1,6 +1,6 @@
 from .base_page import BasePage
-from selenium.webdriver.common.by import By
 from .locators import ProductPageLocators
+
 
 class PageObject(BasePage):
 
@@ -23,3 +23,11 @@ class PageObject(BasePage):
         product_name = self.browser.find_element(*ProductPageLocators.PRODUCT_NAME).text
         message = self.browser.find_element(*ProductPageLocators.MESSAGE_ABOUT_ADDING).text
         assert product_name == message, f"{self.browser.current_url} - No product name in the message"
+
+    def should_not_be_success_message(self):
+        assert self.is_not_element_present(*ProductPageLocators.SUCCESS_MESSAGE), \
+            "Success message is presented, but should not be"
+
+    def should_not_be_is_disappeared(self):
+        assert self.is_not_element_present(*ProductPageLocators.SUCCESS_MESSAGE), \
+            "is_disappeared"
