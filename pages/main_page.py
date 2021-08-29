@@ -1,5 +1,4 @@
 from .base_page import BasePage  # импорт базового класса
-from selenium.webdriver.common.by import By
 from .locators import MainPageLocators  # импорт класса с локаторами
 from .login_page import LoginPage
 
