@@ -17,9 +17,9 @@ class PageObject(BasePage):
     def should_match_the_price_of_the_item(self):  # цена вкорзине должна соответствоват цене товара
         message_basket_total = self.browser.find_element(*ProductPageLocators.MESSAGE_BASKET_TOTAL).text
         product_price = self.browser.find_element(*ProductPageLocators.PRODUCT_PRICE).text
-        assert product_price in message_basket_total, "No product price in the message"
+        assert product_price == message_basket_total, f"{self.browser.current_url} - No product price in the message"
 
     def must_match_the_name_of_the_product(self):  # продукт в корзине сопадает с выбранным
         product_name = self.browser.find_element(*ProductPageLocators.PRODUCT_NAME).text
         message = self.browser.find_element(*ProductPageLocators.MESSAGE_ABOUT_ADDING).text
-        assert product_name in message, "No product name in the message"
+        assert product_name == message, f"{self.browser.current_url} - No product name in the message"
