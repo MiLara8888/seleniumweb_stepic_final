@@ -14,6 +14,9 @@ class BasePage():  # основной класс
         self.url = url  # url экземпляр
         self.browser.implicitly_wait(timeout)  # команда для неявного ожидания
 
+    def go_to_basket(self):
+        btn = self.browser.find_element(*BasePageLocators.GO_TO_BASKET).click()
+
     def go_to_login_page(self):
         link = self.browser.find_element(*BasePageLocators.LOGIN_LINK)
         link.click()
