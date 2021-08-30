@@ -3,6 +3,7 @@ from selenium.webdriver.common.by import By
 
 class BasePageLocators():
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
+    GO_TO_BASKET=(By.CSS_SELECTOR, ".btn-group .btn-default")
 
 
 class MainPageLocators():          #каждый класс соответствует объекту paje object
@@ -19,5 +20,9 @@ class ProductPageLocators(object):
     MESSAGE_BASKET_TOTAL = (By.CSS_SELECTOR, ".alert-info .alertinner strong")
     PRODUCT_PRICE = (By.CSS_SELECTOR, ".product_main .price_color")
     SUCCESS_MESSAGE= (By.CSS_SELECTOR, ".alert-success")
+
+class BasketPageLocators():
+    MESSAGE_BASKET_EMPTY= (By.CSS_SELECTOR,"div#content_inner p")
+    ITEMS_IN_BASKET= (By.CSS_SELECTOR, '.basket-title .row')
 
 
