@@ -14,6 +14,10 @@ class PageObject(BasePage):
         link.click()
         self.solve_quiz_and_get_code()
 
+    def add_to_Basket2(self):  # метод добавления в корзину
+        link = self.browser.find_element(*ProductPageLocators.BUTTON_ADD_TO_BASKET)
+        link.click()
+
     def should_match_the_price_of_the_item(self):  # цена вкорзине должна соответствоват цене товара
         message_basket_total = self.browser.find_element(*ProductPageLocators.MESSAGE_BASKET_TOTAL).text
         product_price = self.browser.find_element(*ProductPageLocators.PRODUCT_PRICE).text
